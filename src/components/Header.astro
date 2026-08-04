@@ -31,6 +31,21 @@ const { navigation } = Astro.props;
       }
     </nav>
 
+    <details class="mobile-nav">
+      <summary aria-label="Navigation öffnen">
+        <span aria-hidden="true"></span>
+      </summary>
+      <nav class="mobile-nav__menu" aria-label="Mobile Hauptnavigation">
+        {
+          navigation.map((item) => (
+            <a href={item.href}>
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </details>
+
     <ThemeToggle />
   </div>
 </header>

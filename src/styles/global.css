@@ -61,7 +61,8 @@ a:hover {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 4px;
 }
@@ -141,7 +142,7 @@ p {
 
 .site-header__inner {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   gap: var(--space-4);
   align-items: center;
   padding-block: var(--space-3);
@@ -160,8 +161,12 @@ p {
 
 .brand img,
 .footer-brand img {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.brand span {
+  display: none;
 }
 
 .footer-brand img {
@@ -174,6 +179,88 @@ p {
   justify-self: end;
   justify-content: end;
   gap: var(--space-4);
+}
+
+.mobile-nav {
+  position: relative;
+  justify-self: end;
+}
+
+.mobile-nav summary {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+}
+
+.mobile-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.mobile-nav summary span,
+.mobile-nav summary span::before,
+.mobile-nav summary span::after {
+  display: block;
+  width: 1.2rem;
+  height: 0.12rem;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+}
+
+.mobile-nav summary span {
+  position: relative;
+}
+
+.mobile-nav summary span::before,
+.mobile-nav summary span::after {
+  position: absolute;
+  left: 0;
+}
+
+.mobile-nav summary span::before {
+  top: -0.4rem;
+}
+
+.mobile-nav summary span::after {
+  top: 0.4rem;
+}
+
+.mobile-nav__menu {
+  position: absolute;
+  top: calc(100% + var(--space-3));
+  right: 0;
+  z-index: 20;
+  display: grid;
+  min-width: min(16rem, calc(100vw - 2rem));
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.mobile-nav__menu a {
+  padding: var(--space-3);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mobile-nav__menu a:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+@media (min-width: 23rem) {
+  .brand span {
+    display: inline;
+  }
 }
 
 .site-nav a,
@@ -608,8 +695,17 @@ p {
 }
 
 @media (min-width: 48rem) {
+  .brand img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
   .site-nav {
     display: flex;
+  }
+
+  .mobile-nav {
+    display: none;
   }
 
   .hero {
