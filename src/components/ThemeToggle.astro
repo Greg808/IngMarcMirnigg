@@ -1,0 +1,18 @@
+<button class="theme-toggle" type="button" aria-label="Darstellung wechseln">
+  <span aria-hidden="true">◐</span>
+</button>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".theme-toggle");
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const getCurrentTheme = () =>
+    root.dataset.theme || (media.matches ? "dark" : "light");
+
+  toggle?.addEventListener("click", () => {
+    const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem("theme", nextTheme);
+  });
+</script>

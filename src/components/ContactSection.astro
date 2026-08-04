@@ -1,0 +1,40 @@
+---
+import CtaLink from "@components/CtaLink.astro";
+import { company } from "@content/company";
+---
+
+<section class="section contact" id="kontakt" aria-labelledby="contact-title">
+  <div class="contact__content">
+    <p class="eyebrow">Kontakt</p>
+    <h2 id="contact-title">Transportbedarf kurz abstimmen.</h2>
+    <p>
+      Für Anfragen, kurzfristige Transporte oder Vertretungsfahrten ist die
+      direkte Kontaktaufnahme per Telefon oder E-Mail vorgesehen.
+    </p>
+  </div>
+
+  <div class="contact-panel">
+    <dl class="contact-panel__details">
+      <div>
+        <dt>Telefon</dt>
+        <dd><a href={company.phone.href}>{company.phone.display}</a></dd>
+      </div>
+      <div>
+        <dt>E-Mail</dt>
+        <dd><a href={company.email.href}>{company.email.display}</a></dd>
+      </div>
+      <div>
+        <dt>Adresse</dt>
+        <dd>
+          {company.address.street}<br />
+          {company.address.postalCode} {company.address.city}
+        </dd>
+      </div>
+    </dl>
+
+    <div class="contact-panel__actions" aria-label="Kontaktaktionen">
+      <CtaLink href={company.phone.href}>Jetzt anrufen</CtaLink>
+      <CtaLink href={company.email.href} variant="secondary">E-Mail schreiben</CtaLink>
+    </div>
+  </div>
+</section>

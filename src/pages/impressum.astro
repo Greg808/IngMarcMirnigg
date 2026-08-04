@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { company } from "@content/company";
+import { placeholders } from "@content/placeholders";
+---
+
+<BaseLayout
+  title={`Impressum - ${company.name}`}
+  description={`Impressum und Unternehmensangaben von ${company.name}.`}
+  canonicalPath="/impressum/"
+>
+  <section class="legal-page" aria-labelledby="impressum-title">
+    <p class="eyebrow">Rechtliches</p>
+    <h1 id="impressum-title">Impressum</h1>
+    <p class="placeholder-note">{placeholders.legalNotice}</p>
+
+    <dl class="legal-list">
+      <div>
+        <dt>Unternehmen</dt>
+        <dd>{company.legalName}</dd>
+      </div>
+      <div>
+        <dt>Adresse</dt>
+        <dd>
+          {company.address.street}<br />
+          {company.address.postalCode} {company.address.city}<br />
+          {company.address.country}
+        </dd>
+      </div>
+      <div>
+        <dt>Telefon</dt>
+        <dd><a href={company.phone.href}>{company.phone.display}</a></dd>
+      </div>
+      <div>
+        <dt>E-Mail</dt>
+        <dd><a href={company.email.href}>{company.email.display}</a></dd>
+      </div>
+      <div>
+        <dt>UID</dt>
+        <dd>{company.legal.vatId}</dd>
+      </div>
+      <div>
+        <dt>GISA</dt>
+        <dd>{company.legal.gisa}</dd>
+      </div>
+      <div>
+        <dt>Gewerbe</dt>
+        <dd>{company.legal.trade}</dd>
+      </div>
+      <div>
+        <dt>Kammer</dt>
+        <dd>{company.legal.chamber}</dd>
+      </div>
+    </dl>
+  </section>
+</BaseLayout>

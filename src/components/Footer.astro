@@ -1,0 +1,42 @@
+---
+import { company } from "@content/company";
+
+type NavigationItem = {
+  label: string;
+  href: string;
+};
+
+type Props = {
+  navigation: NavigationItem[];
+};
+
+const { navigation } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a class="footer-brand" href="/" aria-label={`${company.name} Startseite`}>
+        <img src="/images/mirnigg-logo.svg" alt="" width="84" height="84" />
+        <span>{company.name}</span>
+      </a>
+      <p>{company.tagline}</p>
+    </div>
+
+    <address>
+      {company.address.street}<br />
+      {company.address.postalCode} {company.address.city}<br />
+      {company.address.country}
+    </address>
+
+    <nav aria-label="Rechtliche Seiten">
+      {
+        navigation.map((item) => (
+          <a href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</footer>

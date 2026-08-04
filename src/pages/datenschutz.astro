@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { company } from "@content/company";
+import { placeholders } from "@content/placeholders";
+---
+
+<BaseLayout
+  title={`Datenschutz - ${company.name}`}
+  description={`Datenschutzhinweise von ${company.name}.`}
+  canonicalPath="/datenschutz/"
+>
+  <section class="legal-page" aria-labelledby="privacy-title">
+    <p class="eyebrow">Rechtliches</p>
+    <h1 id="privacy-title">Datenschutz</h1>
+    <p class="placeholder-note">{placeholders.privacy}</p>
+
+    <div class="legal-copy">
+      <h2>Aktueller Stand</h2>
+      <p>
+        Diese lokale Erstversion verwendet keine Kontaktformulare, keine Datenbank
+        und keine Analyse- oder Tracking-Skripte.
+      </p>
+      <p>
+        Vor Veröffentlichung muss geprüft werden, welche Hosting-Logs, Schriften,
+        Karten, eingebetteten Medien oder sonstigen Dienste tatsächlich eingesetzt
+        werden.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

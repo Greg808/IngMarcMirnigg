@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light;
+  --color-background: var(--color-off-white);
+  --color-surface: var(--color-white);
+  --color-surface-muted: #e9e5dc;
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-steel-gray);
+  --color-border: rgb(54 100 139 / 22%);
+  --color-link: var(--color-corporate-blue);
+  --color-focus: var(--color-accent-orange);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-background: #101920;
+    --color-surface: var(--color-dark-surface);
+    --color-surface-muted: var(--color-dark-panel);
+    --color-text: #f6f2ea;
+    --color-text-muted: #c3ced3;
+    --color-border: rgb(244 242 238 / 18%);
+    --color-link: #8fb7d8;
+    --color-focus: #f0a14f;
+  }
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-background: var(--color-off-white);
+  --color-surface: var(--color-white);
+  --color-surface-muted: #e9e5dc;
+  --color-text: var(--color-ink);
+  --color-text-muted: var(--color-steel-gray);
+  --color-border: rgb(54 100 139 / 22%);
+  --color-link: var(--color-corporate-blue);
+  --color-focus: var(--color-accent-orange);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #101920;
+  --color-surface: var(--color-dark-surface);
+  --color-surface-muted: var(--color-dark-panel);
+  --color-text: #f6f2ea;
+  --color-text-muted: #c3ced3;
+  --color-border: rgb(244 242 238 / 18%);
+  --color-link: #8fb7d8;
+  --color-focus: #f0a14f;
+}

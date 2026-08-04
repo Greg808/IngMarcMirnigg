@@ -1,0 +1,36 @@
+---
+import ThemeToggle from "@components/ThemeToggle.astro";
+import { company } from "@content/company";
+
+type NavigationItem = {
+  label: string;
+  href: string;
+};
+
+type Props = {
+  navigation: NavigationItem[];
+};
+
+const { navigation } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="/" aria-label={`${company.name} Startseite`}>
+      <img src="/images/mirnigg-logo.svg" alt="" width="96" height="96" />
+      <span>{company.name}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      {
+        navigation.map((item) => (
+          <a href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <ThemeToggle />
+  </div>
+</header>

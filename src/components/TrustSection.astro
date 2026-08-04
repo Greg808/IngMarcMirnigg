@@ -1,0 +1,38 @@
+---
+import { company } from "@content/company";
+
+const trustItems = [
+  company.experience,
+  "Familienunternehmen in zweiter Generation",
+  "persönlicher Ansprechpartner",
+  "schnelle und flexible Reaktion",
+  "zuverlässige und diskrete Abwicklung",
+  "moderne Euro-6-Fahrzeuge",
+  "sachlicher Einsatz von HVO-Kraftstoff",
+  "faire Preise",
+];
+---
+
+<section class="section trust" id="warum-mirnigg" aria-labelledby="trust-title">
+  <div class="section__header section__header--wide">
+    <p class="eyebrow">Warum Mirnigg</p>
+    <h2 id="trust-title">Direkt, persönlich und verlässlich.</h2>
+    <p>
+      Mirnigg Transporte positioniert sich nicht als anonymer Großanbieter,
+      sondern als erfahrener Partner mit klarer Zuständigkeit.
+    </p>
+  </div>
+
+  <div class="trust__body">
+    <ul class="trust-list" aria-label="Vertrauensmerkmale">
+      {
+        trustItems.map((item) => (
+          <li>
+            <span aria-hidden="true"></span>
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

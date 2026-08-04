@@ -1,0 +1,11 @@
+---
+type Props = {
+  label: string;
+};
+
+const { label } = Astro.props;
+---
+
+<div class="photo-placeholder" role="img" aria-label={label}>
+  <span>{label}</span>
+</div>

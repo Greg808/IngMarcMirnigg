@@ -1,0 +1,32 @@
+---
+import { customerPriorities } from "@content/customerPriorities";
+---
+
+<section
+  class="section customer-priorities"
+  aria-labelledby="customer-priorities-title"
+>
+  <div class="section__header section__header--wide">
+    <p class="eyebrow">Worauf Kunden Wert legen</p>
+    <h2 id="customer-priorities-title">
+      Vertrauen entsteht durch klare Abwicklung.
+    </h2>
+    <p>
+      Bis echte Kundenstimmen vorliegen, zeigt diese Sektion bewusst keine
+      erfundenen Bewertungen, sondern die Punkte, die für gewerbliche
+      Transportaufträge entscheidend sind.
+    </p>
+  </div>
+
+  <div class="customer-priorities__grid">
+    {
+      customerPriorities.map((item) => (
+        <article class="customer-priority">
+          <p class="customer-priority__label">{item.label}</p>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

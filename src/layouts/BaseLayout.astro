@@ -1,0 +1,90 @@
+---
+import "@styles/tokens.css";
+import "@styles/theme.css";
+import "@styles/global.css";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import SkipLink from "@components/SkipLink.astro";
+import { company } from "@content/company";
+import { legalNavigation, mainNavigation } from "@content/navigation";
+import { seo as defaultSeo } from "@content/seo";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+};
+
+const {
+  title = defaultSeo.defaultTitle,
+  description = defaultSeo.defaultDescription,
+  canonicalPath,
+} = Astro.props;
+
+const canonicalUrl = canonicalPath
+  ? new URL(canonicalPath, defaultSeo.siteUrl).toString()
+  : undefined;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: company.name,
+  url: company.domain,
+  telephone: company.phone.display,
+  email: company.email.display,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: company.address.street,
+    postalCode: company.address.postalCode,
+    addressLocality: company.address.city,
+    addressCountry: company.address.country,
+  },
+  areaServed: company.region,
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#36648B" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={company.name} />
+    <meta property="og:image" content={new URL(defaultSeo.image, defaultSeo.siteUrl).toString()} />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    <link rel="icon" href="/images/mirnigg-logo.svg" type="image/svg+xml" />
+    {
+      import.meta.env.DEV && (
+        <>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap"
+            rel="stylesheet"
+          />
+        </>
+      )
+    }
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <script is:inline>
+      const theme = localStorage.getItem("theme");
+      if (theme === "light" || theme === "dark") {
+        document.documentElement.dataset.theme = theme;
+      }
+    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <SkipLink />
+    <Header navigation={mainNavigation} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer navigation={legalNavigation} />
+  </body>
+</html>
