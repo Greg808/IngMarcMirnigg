@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "26.3.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "node scripts/download-fonts.mjs && node scripts/optimize-assets.mjs && astro build && node scripts/prune-build-assets.mjs",
