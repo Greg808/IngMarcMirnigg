@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /
+Noindex: /
+Nofollow: /
 
 Sitemap: https://www.mirniggtransporte.at/sitemap.xml

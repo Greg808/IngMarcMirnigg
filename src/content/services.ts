@@ -2,31 +2,31 @@ export const services = [
   {
     title: "Nationaler Güterverkehr",
     description:
-      "Transporte mit Kerngebiet Wien und Niederösterreich, passend für laufende und kurzfristige gewerbliche Anforderungen.",
+      "Transporte für gewerbliche Auftraggeber mit Kerngebiet Wien und Niederösterreich. Geeignet für regelmäßige Fahrten, einzelne Aufträge und kurzfristige Anforderungen.",
   },
   {
-    title: "Komplettladungen",
+    title: "Komplettladungen / FTL",
     description:
-      "FTL bedeutet Full Truck Load: eine vollständige Ladung wird direkt und ohne unnötige Umladung transportiert.",
+      "Bei einer Komplettladung nutzt ein Auftraggeber die verfügbare Transportkapazität für seine Ware. Das eignet sich für direkte Fahrten ohne unnötige Umladung.",
   },
   {
-    title: "Teilladungen",
+    title: "Teilladungen / LTL",
     description:
-      "LTL bedeutet Less Than Truckload: flexible Transporte, wenn keine komplette LKW-Ladung benötigt wird.",
+      "Teilladungen sind sinnvoll, wenn keine komplette LKW-Ladung benötigt wird. Mirnigg Transporte stimmt Umfang, Termin und Ablauf pragmatisch mit dem Auftraggeber ab.",
   },
   {
     title: "Expresszustellungen",
     description:
-      "Schnelle Reaktion bei zeitkritischen Transporten im gewerblichen Alltag.",
+      "Für zeitkritische gewerbliche Transporte zählt schnelle Reaktion. Anfragen werden direkt abgestimmt, damit rasch geklärt ist, ob und wann die Fahrt möglich ist.",
   },
   {
     title: "Vertretungsfahrten",
     description:
-      "Diskrete Unterstützung bei Urlaub, Ausfällen oder kurzfristigen Engpässen.",
+      "Bei Urlaub, Ausfällen oder kurzfristigen Engpässen unterstützt Mirnigg Transporte diskret und verlässlich als externer Transportpartner.",
   },
   {
     title: "Palettenware und flexible Termine",
     description:
-      "Pragmatische Abwicklung für Palettenware und abgestimmte Liefertermine.",
+      "Palettenware und abgestimmte Liefertermine werden sachlich geplant und zuverlässig abgewickelt. Im Mittelpunkt stehen klare Kommunikation und passende Zeitfenster.",
   },
 ];

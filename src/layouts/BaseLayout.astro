@@ -32,14 +32,23 @@ const structuredData = {
   url: company.domain,
   telephone: company.phone.display,
   email: company.email.display,
+  description: company.description,
   address: {
     "@type": "PostalAddress",
     streetAddress: company.address.street,
     postalCode: company.address.postalCode,
     addressLocality: company.address.city,
-    addressCountry: company.address.country,
+    addressCountry: "AT",
   },
-  areaServed: company.region,
+  areaServed: ["Wien", "Niederösterreich"],
+  knowsAbout: [
+    "Güterverkehr",
+    "Komplettladungen",
+    "Teilladungen",
+    "Expresszustellungen",
+    "Vertretungsfahrten",
+    "Palettenware",
+  ],
 };
 ---
 
@@ -48,6 +57,7 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#36648B" />
     <meta property="og:type" content="website" />

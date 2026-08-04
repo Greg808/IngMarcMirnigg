@@ -23,7 +23,7 @@ export const company = {
     city: "Wien",
     country: "Österreich",
   },
-  domain: "https://www.mirniggtransporte.at",
+  domain: "https://www.mirniggtransporte.at/",
   region: "Wien und Niederösterreich",
   experience: "über 25 Jahre Erfahrung",
   contactPerson: "Mark",

@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 
 const families = [
@@ -16,7 +16,9 @@ const families = [
 
 const outputDir = new URL("../public/fonts/", import.meta.url);
 const localCssBlocks = [];
+const supportedUnicodeRanges = ["U+0000-00FF", "U+0100-02BA"];
 
+await rm(outputDir, { force: true, recursive: true });
 await mkdir(outputDir, { recursive: true });
 
 for (const font of families) {
@@ -40,6 +42,12 @@ for (const font of families) {
 
   for (let index = 0; index < fontFaceBlocks.length; index += 1) {
     const block = fontFaceBlocks[index];
+    const unicodeRange = block.match(/unicode-range:\s*([^;]+)/)?.[1] ?? "";
+
+    if (!supportedUnicodeRanges.some((range) => unicodeRange.includes(range))) {
+      continue;
+    }
+
     const sourceUrl = block.match(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/)?.[1];
     const weight = block.match(/font-weight:\s*(\d+)/)?.[1] ?? String(index);
 
@@ -63,7 +71,7 @@ for (const font of families) {
       block.replace(
         /url\((https:\/\/fonts\.gstatic\.com\/[^)]+)\)/,
         `url("/fonts/${filename}")`,
-      ),
+      ).replace(/\s+/g, " "),
     );
   }
 }

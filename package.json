@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/download-fonts.mjs && astro build",
+    "build": "node scripts/download-fonts.mjs && node scripts/optimize-assets.mjs && astro build && node scripts/prune-build-assets.mjs",
+    "optimize:assets": "node scripts/optimize-assets.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },

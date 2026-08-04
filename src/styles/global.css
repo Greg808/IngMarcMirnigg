@@ -217,7 +217,11 @@ p {
       rgb(20 33 42 / 72%) 42%,
       rgb(20 33 42 / 34%) 100%
     ),
-    url("/images/headerImg.png") center / cover no-repeat;
+    image-set(
+      url("/images/optimized/header-1280.avif") type("image/avif"),
+      url("/images/optimized/header-1280.webp") type("image/webp"),
+      url("/images/optimized/header-1280.jpg") type("image/jpeg")
+    ) center / cover no-repeat;
   color: var(--color-white);
 }
 

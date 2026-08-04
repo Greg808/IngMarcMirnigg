@@ -5,50 +5,56 @@ import { company } from "@content/company";
 <section class="section about" id="ueber-uns" aria-labelledby="about-title">
   <div class="section__header section__header--wide">
     <p class="eyebrow">Über uns</p>
-    <h2 id="about-title">Ein Familienunternehmen in zweiter Generation.</h2>
+    <h2 id="about-title">
+      Persönlich geführt, klar abgestimmt, verlässlich unterwegs
+    </h2>
     <p>
-      {company.name} verbindet langjährige Erfahrung mit persönlicher Betreuung.
-      Der direkte Kontakt zum Unternehmen soll Entscheidungen kurz halten und
-      Transportaufträge pragmatisch möglich machen.
+      {company.name} steht für Güterverkehr mit direkter Verantwortung. Als
+      familiengeführtes Transportunternehmen in zweiter Generation verbindet
+      Mirnigg langjährige Erfahrung mit persönlicher Betreuung im Alltag.
     </p>
   </div>
 
   <div class="about__body">
     <div class="about__portrait" aria-hidden="true">
-      <img
-        src="/images/mark.png"
-        alt=""
-        width="552"
-        height="1010"
-        loading="lazy"
-        decoding="async"
-      />
+      <picture>
+        <source srcset="/images/optimized/mark-320.avif" type="image/avif" />
+        <source srcset="/images/optimized/mark-320.webp" type="image/webp" />
+        <img
+          src="/images/optimized/mark-320.png"
+          alt=""
+          width="320"
+          height="586"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </div>
 
     <div class="about__text">
       <p class="about__copy">
-        Platzhaltertext: Hier steht später die kurze Unternehmensgeschichte:
-        wie Mirnigg Transporte gewachsen ist, wer die Aufträge persönlich
-        betreut und warum klare Absprachen im täglichen Güterverkehr den
-        Unterschied machen.
+        Für Auftraggeber bedeutet das: Anfragen landen nicht in einer anonymen
+        Struktur, sondern werden direkt besprochen. Transportbedarf,
+        Zeitfenster und besondere Anforderungen können kurz abgestimmt werden,
+        bevor eine Fahrt übernommen wird.
       </p>
       <p class="about__copy">
-        Bis die finalen Inhalte vorliegen, bleibt dieser Bereich bewusst
-        sachlich: persönlicher Kontakt, flexible Reaktion und verlässliche
-        Abwicklung stehen im Vordergrund.
+        Das Unternehmen arbeitet für Gewerbekunden, die eine verlässliche und
+        diskrete Abwicklung schätzen: von planbaren Transporten über
+        kurzfristige Zustellungen bis zu Vertretungsfahrten bei Engpässen.
       </p>
-      <ul class="about__facts" aria-label="Platzhalter-Schwerpunkte">
+      <ul class="about__facts" aria-label="Unternehmensschwerpunkte">
         <li>
           <span>Persönlicher Ansprechpartner</span>
-          <strong>direkt erreichbar</strong>
+          <strong>direkte Abstimmung</strong>
         </li>
         <li>
-          <span>Kurze Entscheidungswege</span>
-          <strong>ohne Umwege</strong>
+          <span>Erfahrung</span>
+          <strong>{company.experience}</strong>
         </li>
         <li>
-          <span>Gewerbliche Transporte</span>
-          <strong>klar abgestimmt</strong>
+          <span>Kerngebiet</span>
+          <strong>{company.region}</strong>
         </li>
       </ul>
     </div>

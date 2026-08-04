@@ -318,13 +318,16 @@ Die Struktur soll eine spätere Migration auf ein Headless CMS ermöglichen, ohn
 
 Die Website wird zunächst ausschließlich lokal entwickelt.
 
+Festgelegt:
+
+* produktive Domain: `https://www.mirniggtransporte.at/`
+* Canonical-Basis-URL: `https://www.mirniggtransporte.at/`
+* www-Strategie: `www`
+* Apache-/Hetzner-`.htaccess` für HTTPS- und `www`-Weiterleitung
+* temporär `noindex, nofollow`, solange die Website noch nicht veröffentlicht werden soll
+
 Vorerst nicht festlegen:
 
-* produktive Domain
-* Canonical-URL
-* www- oder non-www-Strategie
-* Redirect-Regeln
-* .htaccess
 * Deployment-Prozess
 * Hosting-spezifische Konfiguration
 
@@ -555,7 +558,7 @@ Prüfen:
 - Meta Description vorhanden
 - Open Graph vorbereitet
 - strukturierte Daten enthalten nur bestätigte Informationen
-- Canonical erst nach Festlegung der produktiven Domain
+- Canonical verwendet die festgelegte produktive Domain
 - Bilder besitzen sinnvolle Dateinamen und Alt-Texte
 
 ### Performance
@@ -609,4 +612,5 @@ Die erste lokale Version ist fertig, wenn:
 * Unternehmensdaten zentral gepflegt werden
 * keine unnötigen Dependencies eingeführt wurden
 * offene Inhalte klar als solche markiert sind
-* noch keine unbekannte Domain oder Hosting-Konfiguration erfunden wurde
+* produktive Domain und Canonical-Basis verwenden `https://www.mirniggtransporte.at/`
+* noch keine unbekannte Hosting-Konfiguration erfunden wurde
