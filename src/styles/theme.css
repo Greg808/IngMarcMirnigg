@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --color-background: var(--color-off-white);
   --color-surface: var(--color-white);
   --color-surface-muted: #e9e5dc;

@@ -59,7 +59,8 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#36648B" />
+    <meta name="theme-color" content="#f4f2ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#101920" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -81,9 +82,13 @@ const structuredData = {
     }
     <link rel="stylesheet" href="/fonts/fonts.css" />
     <script is:inline>
-      const theme = localStorage.getItem("theme");
-      if (theme === "light" || theme === "dark") {
-        document.documentElement.dataset.theme = theme;
+      try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") {
+          document.documentElement.dataset.theme = theme;
+        }
+      } catch {
+        document.documentElement.removeAttribute("data-theme");
       }
     </script>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -96,5 +101,52 @@ const structuredData = {
       <slot />
     </main>
     <Footer navigation={legalNavigation} />
+    <script is:inline>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        if (reduceMotion.matches || !("IntersectionObserver" in window)) {
+          return;
+        }
+
+        const sections = document.querySelectorAll(".section");
+
+        if (sections.length === 0) {
+          return;
+        }
+
+        const markVisible = (section) => {
+          section.classList.add("section--visible");
+        };
+
+        const observer = new IntersectionObserver(
+          (entries, currentObserver) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              markVisible(entry.target);
+              currentObserver.unobserve(entry.target);
+            });
+          },
+          {
+            rootMargin: "0px 0px -12% 0px",
+            threshold: 0.12,
+          },
+        );
+
+        sections.forEach((section) => {
+          section.classList.add("section--reveal");
+
+          if (section.getBoundingClientRect().top < window.innerHeight) {
+            markVisible(section);
+            return;
+          }
+
+          observer.observe(section);
+        });
+      })();
+    </script>
   </body>
 </html>

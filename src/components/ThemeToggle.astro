@@ -1,4 +1,4 @@
-<button class="theme-toggle" type="button" aria-label="Darstellung wechseln">
+<button class="theme-toggle" type="button" aria-label="Dark Mode aktivieren" aria-pressed="false">
   <span aria-hidden="true">◐</span>
 </button>
 
@@ -10,9 +10,31 @@
   const getCurrentTheme = () =>
     root.dataset.theme || (media.matches ? "dark" : "light");
 
+  const updateToggleState = () => {
+    if (!toggle) {
+      return;
+    }
+
+    const isDark = getCurrentTheme() === "dark";
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute(
+      "aria-label",
+      isDark ? "Light Mode aktivieren" : "Dark Mode aktivieren",
+    );
+  };
+
+  updateToggleState();
+
   toggle?.addEventListener("click", () => {
     const nextTheme = getCurrentTheme() === "dark" ? "light" : "dark";
     root.dataset.theme = nextTheme;
-    localStorage.setItem("theme", nextTheme);
+
+    try {
+      localStorage.setItem("theme", nextTheme);
+    } catch {
+      root.dataset.theme = nextTheme;
+    }
+
+    updateToggleState();
   });
 </script>

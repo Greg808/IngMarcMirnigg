@@ -2,7 +2,7 @@ import { readdir, rm } from "node:fs/promises";
 
 const sourceOnlyImages = [
   "../dist/images/headerImg.png",
-  "../dist/images/mark.png",
+  "../dist/images/IngMarcMirnigg.png",
   "../dist/images/mark-alpha-uncropped.png",
   "../dist/images/mark-original-rgb.png",
 ];

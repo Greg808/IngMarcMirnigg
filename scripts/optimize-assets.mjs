@@ -19,7 +19,7 @@ const imageJobs = [
     ],
   },
   {
-    source: new URL("../public/images/mark.png", import.meta.url),
+    source: new URL("../public/images/IngMarcMirnigg.png", import.meta.url),
     basename: "mark-320",
     width: 320,
     withoutEnlargement: true,

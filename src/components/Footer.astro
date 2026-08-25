@@ -15,22 +15,12 @@ const { navigation } = Astro.props;
 
 <footer class="site-footer">
   <div class="site-footer__inner">
-    <div>
+    <div class="site-footer__brand">
       <a class="footer-brand" href="/" aria-label={`${company.name} Startseite`}>
         <img src="/images/mirnigg-logo.svg" alt="" width="84" height="84" />
         <span>{company.name}</span>
       </a>
-      <p>
-        {company.name} ist ein familiengeführtes Transportunternehmen für
-        Gewerbekunden in Wien und Niederösterreich.
-      </p>
     </div>
-
-    <address>
-      {company.address.street}<br />
-      {company.address.postalCode} {company.address.city}<br />
-      {company.address.country}
-    </address>
 
     <nav aria-label="Rechtliche Seiten">
       {
