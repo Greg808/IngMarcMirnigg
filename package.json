@@ -4,20 +4,22 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "26.3.0"
+    "node": ">=24.19.0 <25"
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/download-fonts.mjs && node scripts/optimize-assets.mjs && astro build && node scripts/prune-build-assets.mjs",
+    "build": "node scripts/optimize-assets.mjs && astro build && node scripts/prune-build-assets.mjs",
+    "fonts:download": "node scripts/download-fonts.mjs",
     "optimize:assets": "node scripts/optimize-assets.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },
   "dependencies": {
-    "astro": "^7.1.6"
+    "astro": "^7.2.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "sharp": "^0.35.3",
     "typescript": "^5.9.2"
   }
 }
