@@ -1,3 +1,5 @@
+import { company } from "./company";
+
 export const services = [
   {
     title: "Nationaler Güterverkehr",
@@ -11,8 +13,7 @@ export const services = [
   },
   {
     title: "Teilladungen / LTL",
-    description:
-      "Teilladungen sind sinnvoll, wenn keine komplette LKW-Ladung benötigt wird. Mirnigg Transporte stimmt Umfang, Termin und Ablauf pragmatisch mit dem Auftraggeber ab.",
+    description: `Teilladungen sind sinnvoll, wenn keine komplette LKW-Ladung benötigt wird. ${company.name} stimmt Umfang, Termin und Ablauf pragmatisch mit dem Auftraggeber ab.`,
   },
   {
     title: "Expresszustellungen",
@@ -21,8 +22,7 @@ export const services = [
   },
   {
     title: "Vertretungsfahrten",
-    description:
-      "Bei Urlaub, Ausfällen oder kurzfristigen Engpässen unterstützt Mirnigg Transporte diskret und verlässlich als externer Transportpartner.",
+    description: `Bei Urlaub, Ausfällen oder kurzfristigen Engpässen unterstützt ${company.name} diskret und verlässlich als externer Transportpartner.`,
   },
   {
     title: "Palettenware und flexible Termine",

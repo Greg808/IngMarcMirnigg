@@ -1,19 +1,14 @@
 export const company = {
-  name: "Mirnigg Transporte",
-  legalName: "Mirnigg Transporte",
+  name: "Ing Mirnigg Transporte",
+  legalName: "Ing. Marc Mirnigg Transporte e.U.",
   tagline: "Güterverkehr für Gewerbekunden in Wien und Niederösterreich.",
   description:
     "Familiengeführtes Transportunternehmen in zweiter Generation mit über 25 Jahren Erfahrung.",
   phone: {
-    display: "+43 660 568 1556",
+    display: "0660 / 5681556",
     href: "tel:+436605681556",
   },
   email: {
-    display: "office@mirnigg.at",
-    href: "mailto:office@mirnigg.at",
-    note: "Aus PDF extrahiert, vor Veröffentlichung bestätigen.",
-  },
-  fallbackEmail: {
     display: "mirnigg.marc@gmail.com",
     href: "mailto:mirnigg.marc@gmail.com",
   },
@@ -29,9 +24,6 @@ export const company = {
   contactPerson: "Mark",
   legal: {
     vatId: "ATU 81124249",
-    gisa: "37356552",
-    chamber: "Mitglied der WKÖ, Transportunternehmen",
-    trade: "Güterverkehr innerstaatlich über 3,5t hzGG",
   },
   values: [
     "Zuverlässigkeit",

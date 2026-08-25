@@ -1,3 +1,5 @@
+import { company } from "./company";
+
 export const customerPriorities = [
   {
     label: "Terminabstimmung",
@@ -8,8 +10,7 @@ export const customerPriorities = [
   {
     label: "Erreichbarkeit",
     title: "ein Ansprechpartner",
-    description:
-      "Auftraggeber wissen, wer zuständig ist und wie sie Mirnigg Transporte erreichen.",
+    description: `Auftraggeber wissen, wer zuständig ist und wie sie ${company.name} erreichen.`,
   },
   {
     label: "Abwicklung",

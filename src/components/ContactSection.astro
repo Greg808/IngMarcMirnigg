@@ -9,7 +9,7 @@ import { company } from "@content/company";
     <h2 id="contact-title">Transportbedarf direkt abstimmen</h2>
     <p>
       Für Anfragen, kurzfristige Transporte, Komplettladungen, Teilladungen
-      oder Vertretungsfahrten erreichen Sie Mirnigg Transporte telefonisch oder
+      oder Vertretungsfahrten erreichen Sie {company.name} telefonisch oder
       per E-Mail.
     </p>
   </div>
@@ -33,9 +33,12 @@ import { company } from "@content/company";
       </div>
     </dl>
 
-    <div class="contact-panel__actions" aria-label="Kontaktaktionen">
-      <CtaLink href={company.phone.href}>Jetzt anrufen</CtaLink>
-      <CtaLink href={company.email.href} variant="secondary">E-Mail schreiben</CtaLink>
+    <div class="contact-panel__primary">
+      <p>Direkt abstimmen</p>
+      <div class="contact-panel__actions" aria-label="Kontaktaktionen">
+        <CtaLink href={company.phone.href}>Jetzt anrufen</CtaLink>
+        <CtaLink href={company.email.href} variant="secondary">E-Mail schreiben</CtaLink>
+      </div>
     </div>
   </div>
 </section>

@@ -1,16 +1,6 @@
 ---
 import { company } from "@content/company";
-
-const trustItems = [
-  `${company.experience} im gewerblichen Transport`,
-  "Familienunternehmen in zweiter Generation",
-  "persönliche Betreuung durch den Unternehmer",
-  "schnelle Reaktion bei kurzfristigem Bedarf",
-  "zuverlässige und diskrete Abwicklung",
-  "moderne Euro-6-Fahrzeuge",
-  "sachlicher Einsatz von HVO-Kraftstoff",
-  "faire und nachvollziehbare Zusammenarbeit",
-];
+import { trustItems } from "@content/trust";
 ---
 
 <section class="section trust" id="warum-mirnigg" aria-labelledby="trust-title">
@@ -20,7 +10,7 @@ const trustItems = [
       Ein direkter Ansprechpartner statt anonymer Abwicklung
     </h2>
     <p>
-      Mirnigg Transporte ist ein familiengeführtes Unternehmen in zweiter
+      {company.name} ist ein familiengeführtes Unternehmen in zweiter
       Generation. Gewerbekunden profitieren von kurzen Wegen, persönlicher
       Abstimmung und mehr als 25 Jahren Erfahrung im Güterverkehr.
     </p>
