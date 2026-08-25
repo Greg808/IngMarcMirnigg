@@ -8,5 +8,4 @@ export const mainNavigation = [
 export const legalNavigation = [
   { label: "Impressum", href: "/impressum/" },
   { label: "Datenschutz", href: "/datenschutz/" },
-  { label: "AGB", href: "/agb/" },
 ];

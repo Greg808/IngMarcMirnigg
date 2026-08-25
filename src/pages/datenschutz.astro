@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { company } from "@content/company";
-import { placeholders } from "@content/placeholders";
 ---
 
 <BaseLayout
@@ -12,18 +11,133 @@ import { placeholders } from "@content/placeholders";
   <section class="legal-page" aria-labelledby="privacy-title">
     <p class="eyebrow">Rechtliches</p>
     <h1 id="privacy-title">Datenschutz</h1>
-    <p class="placeholder-note">{placeholders.privacy}</p>
 
     <div class="legal-copy">
-      <h2>Aktueller Stand</h2>
+      <h2>1. Verantwortlicher</h2>
       <p>
-        Diese lokale Erstversion verwendet keine Kontaktformulare, keine Datenbank
-        und keine Analyse- oder Tracking-Skripte.
+        Verantwortlich für die Datenverarbeitung auf dieser Website ist:
       </p>
       <p>
-        Vor Veröffentlichung muss geprüft werden, welche Hosting-Logs, Schriften,
-        Karten, eingebetteten Medien oder sonstigen Dienste tatsächlich eingesetzt
-        werden.
+        {company.legalName}<br />
+        {company.address.street}<br />
+        {company.address.postalCode} {company.address.city}<br />
+        {company.address.country}
+      </p>
+      <p>
+        Telefon: <a href={company.phone.href}>{company.phone.display}</a><br />
+        E-Mail: <a href={company.email.href}>{company.email.display}</a>
+      </p>
+
+      <h2>2. Bereitstellung der Website und Server-Logfiles</h2>
+      <p>
+        Diese Website wird als statische Website bereitgestellt und bei Hetzner
+        gehostet. Beim Aufruf der Website verarbeitet der Webserver technisch
+        notwendige Zugriffsdaten, damit die Website ausgeliefert, stabil betrieben
+        und vor Missbrauch geschützt werden kann.
+      </p>
+      <p>
+        Dabei können insbesondere folgende Daten verarbeitet werden:
+      </p>
+      <ul>
+        <li>IP-Adresse beziehungsweise anonymisierte IP-Adresse</li>
+        <li>Datum und Uhrzeit des Zugriffs</li>
+        <li>aufgerufene Seite oder Datei</li>
+        <li>übertragene Datenmenge</li>
+        <li>Browsertyp, Browserversion und Betriebssystem</li>
+        <li>Referrer-URL, sofern vom Browser übermittelt</li>
+        <li>HTTP-Statuscode</li>
+      </ul>
+      <p>
+        Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Das berechtigte Interesse
+        liegt im sicheren, fehlerfreien und effizienten Betrieb dieser Website.
+      </p>
+      <p>
+        Nach Angaben von Hetzner werden IP-Adressen bei Webhosting- und
+        Managed-Server-Produkten standardmäßig anonymisiert gespeichert.
+        Apache-Access- und Error-Logs werden standardmäßig 7 Tage vorgehalten,
+        sofern im Hostingkonto keine abweichende Einstellung vorgenommen wurde.
+      </p>
+
+      <h2>3. Hostinganbieter</h2>
+      <p>
+        Hostinganbieter ist die Hetzner Online GmbH, Industriestr. 25, 91710
+        Gunzenhausen, Deutschland. Hetzner verarbeitet Zugriffsdaten im Rahmen der
+        Bereitstellung und des technischen Betriebs der Website.
+      </p>
+
+      <h2>4. Kontaktaufnahme</h2>
+      <p>
+        Wenn Sie telefonisch oder per E-Mail Kontakt aufnehmen, werden die von
+        Ihnen mitgeteilten Daten zur Bearbeitung der Anfrage verarbeitet. Dazu
+        können insbesondere Name, Unternehmen, Kontaktdaten, Inhalt der Anfrage
+        und Kommunikationsdaten gehören.
+      </p>
+      <p>
+        Rechtsgrundlage ist je nach Anfrage Art. 6 Abs. 1 lit. b DSGVO, wenn die
+        Verarbeitung zur Durchführung vorvertraglicher Maßnahmen oder eines
+        Vertrags erforderlich ist, oder Art. 6 Abs. 1 lit. f DSGVO aufgrund des
+        berechtigten Interesses an der Beantwortung geschäftlicher Anfragen.
+      </p>
+
+      <h2>5. Cookies, Tracking und externe Dienste</h2>
+      <p>
+        Diese Website verwendet keine Analyse- oder Tracking-Skripte und setzt
+        keine Marketing-Cookies. Es werden keine Google Fonts oder vergleichbaren
+        Schriftdateien von externen Servern geladen; die verwendeten Schriften
+        werden lokal von dieser Website ausgeliefert.
+      </p>
+      <p>
+        Für den Theme-Umschalter kann die vom Nutzer gewählte Darstellung
+        ausschließlich lokal im Browser gespeichert werden. Diese Information wird
+        nicht an den Websitebetreiber übermittelt.
+      </p>
+
+      <h2>6. KI-generierte Inhalte</h2>
+      <p>
+        Diese Website kann einzelne KI-generierte oder KI-bearbeitete Bilder
+        enthalten. Solche Bilder dienen der visuellen Gestaltung und ersetzen
+        keine rechtlich oder geschäftlich verbindlichen Angaben. Die Inhalte der
+        Website werden vor Veröffentlichung redaktionell geprüft.
+      </p>
+
+      <h2>7. Speicherdauer</h2>
+      <p>
+        Personenbezogene Daten werden nur so lange gespeichert, wie es für die
+        jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten
+        bestehen. Server-Logfiles richten sich nach den Einstellungen und
+        Standardfristen des Hostinganbieters. Daten aus Anfragen werden so lange
+        aufbewahrt, wie dies für die Bearbeitung, Dokumentation und allfällige
+        gesetzliche Pflichten erforderlich ist.
+      </p>
+
+      <h2>8. Ihre Rechte</h2>
+      <p>
+        Sie haben nach Maßgabe der gesetzlichen Voraussetzungen das Recht auf
+        Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
+        Datenübertragbarkeit sowie Widerspruch gegen bestimmte Verarbeitungen.
+        Wenn eine Verarbeitung auf einer Einwilligung beruht, können Sie diese
+        Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
+      </p>
+
+      <h2>9. Beschwerderecht</h2>
+      <p>
+        Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen
+        Daten gegen Datenschutzrecht verstößt, haben Sie das Recht, eine
+        Beschwerde bei der österreichischen Datenschutzbehörde einzubringen:
+      </p>
+      <p>
+        Österreichische Datenschutzbehörde<br />
+        Barichgasse 40-42<br />
+        1030 Wien<br />
+        E-Mail: <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a><br />
+        Website: <a href="https://www.dsb.gv.at/">www.dsb.gv.at</a>
+      </p>
+
+      <h2>10. Stand dieser Datenschutzerklärung</h2>
+      <p>
+        Stand: August 2026. Diese Datenschutzerklärung kann angepasst werden,
+        wenn sich technische Funktionen, Hosting-Einstellungen oder rechtliche
+        Anforderungen ändern.
       </p>
     </div>
   </section>
